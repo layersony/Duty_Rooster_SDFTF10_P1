@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duty Rooster</title>
+</head>
+<body>
+    <h1>Duty Rooster</h1>
+    <form id="dutyForm">
+        <input type="hidden" name="duty_id" id="duty_id">
+        <input type="text" name="username" id="username" placeholder="username">
+        <input type="text" name="cleaning_time" id="cleaning_time" placeholder="cleaning_time">
+        <input type="text" name="duty" id="duty" placeholder="duty">
+        <button type="submit" >Add or Update</button>
+    </form>
+    <hr>
+    <table id="dutyTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Cleaning Time</th>
+                <th>Duty</th>
+                <th>Action</th> <!-- Edit or Delete -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Display dynamic data here -->
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
