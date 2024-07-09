@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if (duty_id){ 
             // if duty_id exist the it's an update ("UPDATE/PUT method")
             // Add Data to Server
-            fetch(`http://localhost:3000/duties/${duty}`, {
+            fetch(`http://localhost:3000/duties/${duty_id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
