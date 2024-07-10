@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     
     function loadDuties(){
-        fetch("http://localhost:3000/duties")
+        fetch("https://duty-rooter-db.onrender.com/duties")
         .then(response => response.json())
         .then(data => {
             data.forEach(duty => {
@@ -46,28 +46,34 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if (duty_id){ 
             // if duty_id exist the it's an update ("UPDATE/PUT method")
             // Add Data to Server
-            fetch(`http://localhost:3000/duties/${duty_id}`, {
+            fetch(`https://duty-rooter-db.onrender.com/duties/${duty_id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(dutyData)
             })
+            .then(resp => resp.json())
+            .then(data => {
+                window.location.reload()
+            })
         }
         else {
             // if duty_id doesn't exist it's a new duty ("POST Method")
             // Add Data to Server
-            fetch('http://localhost:3000/duties', {
+            fetch('https://duty-rooter-db.onrender.com/duties', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(dutyData)
             })
+            .then(resp => resp.json())
+            .then(data => {
+                window.location.reload()
+            })
         }
 
-
-        
 
     })
 
